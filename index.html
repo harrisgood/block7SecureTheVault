@@ -50,17 +50,26 @@
     // pop up dialog of a string concatenating all three combination numbers
     //alert(`${firstNum} - ${secondNum} - ${thirdNum}`);
     
-    // allow user to input a combination, kindly ask that they make things easy by following my format
+    //variable containing regex formatting of if a string is 2 digits, 1 space, 1 hyphen, 1 space, 2 digits, 1 space, 1 hyphen, 2 digits
+    const regex = /\d{2}\s[-]\s\d{2}\s[-]\s\d{2}/g
+
+    // allow user to input a combination, kindly ask that they make things easy by following my format (if not i will check them anyway)
     let userInputCombo = prompt("Please use the XX - XX - XX format to enter your combination:", "00 - 00 - 00")
     
-    //check if their input combination matched ours (10 - 40 - 39)
-        // if it does, let them in (line 50)
-        // if not, complain (line 53)
-    if (userInputCombo == `${firstNum} - ${secondNum} - ${thirdNum}`){
+    // check if their input is formatted properly (line 62)
+      // if no bad user (line 71)
+      // if yes, check if its the right numbers (line 65)
+        // if they are, let them in (line 66)
+          // if not, complain (line 68)
+    if(regex.test(userInputCombo)){
+      if (userInputCombo == `${firstNum} - ${secondNum} - ${thirdNum}`){
       alert("Vault unlocked, you win a billion dollars!")
-    } else if( userInputCombo != `${firstNum} - ${secondNum} - ${thirdNum}`){
-      alert("Intruder Alert!")
+      } else if( userInputCombo != `${firstNum} - ${secondNum} - ${thirdNum}`){
+        alert("Intruder Alert!")
+      }
     }
+      alert("Bad user! Use my format!")
+
   </script>
   </head>
   <body></body>
