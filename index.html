@@ -51,10 +51,10 @@
     //alert(`${firstNum} - ${secondNum} - ${thirdNum}`);
     
     //variable containing regex formatting of if a string is 2 digits, 1 space, 1 hyphen, 1 space, 2 digits, 1 space, 1 hyphen, 2 digits
-    const regex = /\d{2}\s[-]\s\d{2}\s[-]\s\d{2}/g
+    const regex = /\d{2}\s[-]\s\d{2}\s[-]\s\d{2}/g;
 
     // allow user to input a combination, kindly ask that they make things easy by following my format (if not i will check them anyway)
-    let userInputCombo = prompt("Please use the XX - XX - XX format to enter your combination:", "00 - 00 - 00")
+    let userInputCombo = prompt("Please use the XX - XX - XX format to enter your combination:", "00 - 00 - 00");
     
     // check if their input is formatted properly with regex and length of string (line 62)
       // if no bad user (line 71)
@@ -63,12 +63,12 @@
           // if not, complain (line 68)
     if(regex.test(userInputCombo) && userInputCombo.length == 12){
       if (userInputCombo == `${firstNum} - ${secondNum} - ${thirdNum}`){
-        alert("Vault unlocked, you win a billion dollars!")
+        alert("Vault unlocked, you win a billion dollars!");
       } else if( userInputCombo != `${firstNum} - ${secondNum} - ${thirdNum}`){
-        alert("Intruder Alert!")
+        alert("Intruder Alert!");
       }
     }else {
-      alert("Bad user! Use my format!")
+      alert("Bad user! Use my format!");
     }
       
 
