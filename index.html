@@ -18,16 +18,25 @@
     -show combinations in dialog
 
     -push updates to github
+    
+    stretch goal
+    -ask user for combination
+    -confirm or deny its validity
+    
+    stretch how im gonna do it
+    -prompt the user, store answer in variable
+    -use if statement to confirm or deny validity
+      -display appropriate response
 -->
 
 <html>
   <head>
       <script defer>
-    //message to greet potential vault openers
+    // message to greet potential vault openers
     const welcomeMessage = "You have received this message because you have been chosen to open an important vault. Here is the secret combination:";
 
     // pop up dialog displaying welcome message stored in constant
-    alert(welcomeMessage);
+    //alert(welcomeMessage);
 
     // initialize our first combination number as 1000 divided by 100, should equal 10
     const firstNum = 1000 / 100;
@@ -39,7 +48,19 @@
     const thirdNum = 18 + 21;
 
     // pop up dialog of a string concatenating all three combination numbers
-    alert(`${firstNum} - ${secondNum} - ${thirdNum}`);
+    //alert(`${firstNum} - ${secondNum} - ${thirdNum}`);
+    
+    // allow user to input a combination, kindly ask that they make things easy by following my format
+    let userInputCombo = prompt("Please use the XX - XX - XX format to enter your combination:", "00 - 00 - 00")
+    
+    //check if their input combination matched ours (10 - 40 - 39)
+        // if it does, let them in (line 50)
+        // if not, complain (line 53)
+    if (userInputCombo == `${firstNum} - ${secondNum} - ${thirdNum}`){
+      alert("Vault unlocked, you win a billion dollars!")
+    } else if( userInputCombo != `${firstNum} - ${secondNum} - ${thirdNum}`){
+      alert("Intruder Alert!")
+    }
   </script>
   </head>
   <body></body>
